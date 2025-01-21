@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SG_dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 324b3dfc94743684d9b946f88e0d210e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2641126eedfbba6419d41f788d7c753c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,11 +38,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0.006
+    - _DissolveAmount: 0.38
     - _DissolveScale: 25
+    - _DissolveWidht: -12.76
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.3921569}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4500414579061497264
