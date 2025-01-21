@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public PoolGenerator poolEnemy;
     public PoolMunition poolMunition;
+    public RulesGame rulesGame;
 
     public Transform targetEnemy;
     
@@ -12,6 +14,7 @@ public class Manager : MonoBehaviour
     
     public float spawnInterval = 2f;
     private float _spawnTimer;
+    public TextMeshProUGUI scoreText;
 
     private void Start()
     {
@@ -69,6 +72,8 @@ public class Manager : MonoBehaviour
     {
         enemy.SetActive(false);
         poolEnemy.ReturnObject(enemy);
+        int scoreAdd = rulesGame.AddScore100();
+        scoreText.text = scoreAdd.ToString();
     }
     
     private void HandleBubbleCollision(GameObject bubble)
