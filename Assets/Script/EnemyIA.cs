@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class EnemyIA : MonoBehaviour
 {
     public Transform target;
     [SerializeField] private float speed;
+    
+    public Action<GameObject> OnTouched;
     
     private void Update()
     {
@@ -13,5 +16,15 @@ public class EnemyIA : MonoBehaviour
             Vector3 dir = (target.position - transform.position).normalized;
             if(dir != Vector3.zero) transform.forward = dir;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        NotyfieCollision();
+    }
+
+    private void NotyfieCollision()
+    {
+        OnTouched?.Invoke(gameObject);
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Manager : MonoBehaviour
 {
-    [Header("ref poolEnemy")] public PoolGenerator poolEnemy;
+    public PoolGenerator poolEnemy;
     public PoolMunition poolMunition;
 
     public Transform targetEnemy;
@@ -16,6 +16,13 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         _spawnTimer = spawnInterval;
+
+        foreach (var enemy in poolEnemy.GetAllEnemies())
+        {
+            var enemyScript = enemy.GetComponent<EnemyIA>();
+
+            if (enemyScript != null) enemyScript.OnTouched += HandleEnemyCollision;
+        }
 
         foreach (var bubble in poolMunition.GetAllBubbles())
         {
@@ -58,6 +65,12 @@ public class Manager : MonoBehaviour
         }
     }
 
+    private void HandleEnemyCollision(GameObject enemy)
+    {
+        enemy.SetActive(false);
+        poolEnemy.ReturnObject(enemy);
+    }
+    
     private void HandleBubbleCollision(GameObject bubble)
     {
         bubble.SetActive(false);
