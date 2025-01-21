@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8879493483320341152}
   - component: {fileID: 8013859756101733253}
   - component: {fileID: 7172848546923191878}
+  - component: {fileID: 8271139203109029142}
   m_Layer: 6
   m_Name: buuble
   m_TagString: munition
@@ -136,3 +137,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8271139203109029142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574892893591059355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccabfbf08cf2a64581d2d37d27b44fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

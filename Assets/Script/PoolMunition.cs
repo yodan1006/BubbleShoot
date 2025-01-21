@@ -10,7 +10,7 @@ public class PoolMunition : MonoBehaviour
 
     private List<GameObject> bubblesPool;
 
-    private void Start()
+    private void Awake()
     {
         bubblesPool = new List<GameObject>();
 
@@ -36,6 +36,11 @@ public class PoolMunition : MonoBehaviour
         newBubble.SetActive(true);
         bubblesPool.Add(newBubble);
         return newBubble;
+    }
+
+    public List<GameObject> GetAllBubbles()
+    {
+        return bubblesPool;
     }
 
     public void ReturnBubble(GameObject bubble)

@@ -2,6 +2,10 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     [Header("ref poolEnemy")] public PoolGenerator poolEnemy;
+    public PoolMunition poolMunition;
+
+    public Transform targetEnemy;
+    
     [Header("ref limite of spawn")]
     public Transform spawnPoint1;
     public Transform spawnPoint2;
@@ -12,6 +16,13 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         _spawnTimer = spawnInterval;
+
+        foreach (var bubble in poolMunition.GetAllBubbles())
+        {
+            var bubbleScript = bubble.GetComponent<Bubble>();
+
+            if (bubbleScript != null) bubbleScript.OnBubbleTouched += HandleBubbleCollision;
+        }
     }
 
     private void Update()
@@ -33,7 +44,24 @@ public class Manager : MonoBehaviour
         {
             Vector3 pos = GetRandomPos();
             slime.transform.position = pos;
+            ConfigureEnemy(slime);
         }
+    }
+
+    private void ConfigureEnemy(GameObject enemy)
+    {
+        EnemyIA ia = enemy.GetComponent<EnemyIA>();
+
+        if (ia != null)
+        {
+            ia.target = targetEnemy;
+        }
+    }
+
+    private void HandleBubbleCollision(GameObject bubble)
+    {
+        bubble.SetActive(false);
+        poolMunition.ReturnBubble(bubble);
     }
 
     private Vector3 GetRandomPos()
