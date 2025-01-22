@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ public class PoolMunition : MonoBehaviour
 
         for (int i = 0; i < PoolSize; i++)
         {
-            GameObject bubble = Instantiate(bubblePrefab);
+            GameObject bubble = Instantiate(bubblePrefab, transform);
             bubble.SetActive(false);
             bubblesPool.Add(bubble);
         }

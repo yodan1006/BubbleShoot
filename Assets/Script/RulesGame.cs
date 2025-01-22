@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class RulesGame : MonoBehaviour
 {
     public int life { get; private set; } = 3;
-    public int score { get; private set; } = 0;
+    public int score { get; private set; }
 
     
     public Image heart;
@@ -26,6 +26,7 @@ public class RulesGame : MonoBehaviour
         {
             Instantiate(heart, conteneurHeart);
         }
+       
     }
 
     public void TakeDamage(int damage)

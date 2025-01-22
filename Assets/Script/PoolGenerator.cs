@@ -16,7 +16,7 @@ public class PoolGenerator : MonoBehaviour
         {
             foreach (var prefab in PrefabSlime)
             {
-                GameObject obj = Instantiate(prefab);
+                GameObject obj = Instantiate(prefab, transform);
                 obj.SetActive(false);
                 _poolEnemy.Add(obj);
             }
