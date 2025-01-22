@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SG_dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 2641126eedfbba6419d41f788d7c753c, type: 3}
+  m_Name: MAT_SG_slime
+  m_Shader: {fileID: -6465566751694194690, guid: ad3c13a44b77f2b4b8a1310420a64f52, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -38,17 +38,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0.464
-    - _DissolveScale: 25
-    - _DissolveWidht: 0.05
+    - _Distortion: 0
+    - _DistortionSpeed: 0
+    - _NoiseScale: 0
+    - _NoiseSubtract: 0.25
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.3921569}
-    - _DissolveColor: {r: 0.16215709, g: 0.9339623, b: 0.09251513, a: 0.6235294}
+    - _DistortionTilling: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4500414579061497264
+--- !u!114 &2743714464277270014
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
