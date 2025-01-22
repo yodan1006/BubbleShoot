@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ShootBubble : MonoBehaviour
@@ -9,7 +8,11 @@ public class ShootBubble : MonoBehaviour
     public float shootForce = 10f;
     
     private Camera mainCamera;
-
+    
+    public int missileCount = 1;
+    [SerializeField] float spreadAngle = 30f;
+    [SerializeField] float missileSpeed = 10f;
+    
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -39,16 +42,35 @@ public class ShootBubble : MonoBehaviour
 
     private void Bubbleshoot()
     {
-        GameObject bubble = poolMunition.GetBubble();
-        
-        bubble.transform.position = shootPoint.position;
-        
-        Rigidbody rb = bubble.GetComponent<Rigidbody>();
-        if (rb != null)
+        float angleStep = spreadAngle / (missileCount - 1); 
+        float startAngle = -spreadAngle / 2 ;
+        if (missileCount > 1)
         {
-            rb.linearVelocity = Vector3.zero;
+            for (int i = 0; i < missileCount; i++)
+            {
+                GameObject bubble = poolMunition.GetBubble();
+
+                bubble.transform.position = shootPoint.position;
+
+                Rigidbody rb = bubble.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    float angle = startAngle + angleStep * i;
+                    Vector3 dir = Quaternion.Euler(0, angle, 0) * shootPoint.forward;
+
+                    bubble.transform.position = transform.position;
+                    rb.AddForce(dir * shootForce, ForceMode.Impulse);
+                }
+            }
+        }
+        else
+        {
+            GameObject bubble = poolMunition.GetBubble();
+            bubble.transform.position = shootPoint.position;
+            Rigidbody rb = bubble.GetComponent<Rigidbody>();
             
             rb.AddForce(shootPoint.forward * shootForce, ForceMode.Impulse);
         }
     }
 }
+

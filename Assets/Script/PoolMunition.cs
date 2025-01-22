@@ -31,7 +31,7 @@ public class PoolMunition : MonoBehaviour
                 return bubble;
             }
         }
-        GameObject newBubble = Instantiate(bubblePrefab);
+        GameObject newBubble = Instantiate(bubblePrefab, transform);
         newBubble.SetActive(true);
         bubblesPool.Add(newBubble);
         return newBubble;

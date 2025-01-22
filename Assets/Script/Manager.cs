@@ -4,6 +4,7 @@ public class Manager : MonoBehaviour
 {
     public PoolGenerator poolEnemy;
     public PoolMunition poolMunition;
+    public ShootBubble shootBubble;
     public RulesGame rulesGame;
 
     public Transform targetEnemy;
@@ -15,6 +16,11 @@ public class Manager : MonoBehaviour
     public float spawnInterval = 2f;
     private float _spawnTimer;
     public TextMeshProUGUI scoreText;
+    
+    [Header("bonus")]
+    public int[] bonus;
+
+    public int CountBonus;
 
     private void Start()
     {
@@ -44,6 +50,20 @@ public class Manager : MonoBehaviour
             SpawnSlime();
             _spawnTimer = spawnInterval;
         }
+
+        for (int i = 0; i < bonus.Length; i++)
+        {
+            if (CountBonus >= bonus[i])
+            {
+                Applybonus();
+                bonus[i]--;
+            }
+        }
+    }
+
+    private void Applybonus()
+    {
+        shootBubble.missileCount += 2;
     }
 
     private void SpawnSlime()
@@ -74,6 +94,7 @@ public class Manager : MonoBehaviour
         poolEnemy.ReturnObject(enemy);
         int scoreAdd = rulesGame.AddScore100();
         scoreText.text = scoreAdd.ToString();
+        CountBonus++;
     }
     
     private void HandleBubbleCollision(GameObject bubble)
