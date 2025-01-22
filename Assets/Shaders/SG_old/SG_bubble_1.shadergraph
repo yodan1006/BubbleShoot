@@ -1404,8 +1404,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3578.999755859375,
-            "y": -1281.9998779296875,
+            "x": -3579.000244140625,
+            "y": -1283.0001220703125,
             "width": 159.0,
             "height": 34.0
         }
@@ -2799,17 +2799,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "2a35547e3924466aad5399a85430687c",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "53c97ac635da404aafafa4824bc261e7"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3252.68994140625,
-            "y": -1592.1234130859375,
-            "width": 0.0,
-            "height": 0.0
+            "x": -3253.000244140625,
+            "y": -1593.0001220703125,
+            "width": 158.0,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -8985,9 +8985,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2639.0,
-            "y": -1096.0,
-            "width": 133.999755859375,
+            "x": -2639.000244140625,
+            "y": -1097.0001220703125,
+            "width": 134.0,
             "height": 34.0
         }
     },
