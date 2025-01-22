@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5306680661856872971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: size/rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8417339623929524636}
   - component: {fileID: 8486561594598825535}
   - component: {fileID: 1337639177805611242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slimeOrange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 5729093003804685539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,9 +151,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -756084476780977587, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
       propertyPath: m_Name
       value: Model-EslimeWithAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029394580257094462, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551003458065404947, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170305420650282716, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

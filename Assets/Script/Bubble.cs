@@ -5,7 +5,7 @@ public class Bubble : MonoBehaviour
 {
     public Action<GameObject> OnBubbleTouched;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         NotyfieCollision();
     }

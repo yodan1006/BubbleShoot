@@ -19,8 +19,8 @@ public class Manager : MonoBehaviour
     
     [Header("bonus")]
     public int[] bonus;
-
     public int CountBonus;
+    private bool[] bonusApplied;
 
     private void Start()
     {
@@ -39,6 +39,7 @@ public class Manager : MonoBehaviour
 
             if (bubbleScript != null) bubbleScript.OnBubbleTouched += HandleBubbleCollision;
         }
+        bonusApplied = new bool[bonus.Length];
     }
 
     private void Update()
@@ -53,15 +54,15 @@ public class Manager : MonoBehaviour
 
         for (int i = 0; i < bonus.Length; i++)
         {
-            if (CountBonus >= bonus[i])
+            if (CountBonus >= bonus[i] && !bonusApplied[i])
             {
-                Applybonus();
-                bonus[i]--;
+                Applybonus(i);
+                bonusApplied[i] = true;
             }
         }
     }
 
-    private void Applybonus()
+    private void Applybonus(int bonusIndex)
     {
         shootBubble.missileCount += 2;
     }
