@@ -602,7 +602,7 @@ MonoBehaviour:
   timeToIncreasedSpawn: 60
   increasedSpeedSlime: 0.5
   CountForKingSlime: 0
-  bonus: 050000000a000000
+  bonus: 0f0000001e000000
   CountBonus: 0
 --- !u!114 &334976913
 MonoBehaviour:
@@ -799,7 +799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 489330406406405431, guid: d9173eba63b92c44a9730b77436d1a5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.9
+      value: 91.57
       objectReference: {fileID: 0}
     - target: {fileID: 489330406406405431, guid: d9173eba63b92c44a9730b77436d1a5b, type: 3}
       propertyPath: m_LocalPosition.y
