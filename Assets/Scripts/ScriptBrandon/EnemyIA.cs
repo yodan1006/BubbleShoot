@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyIA : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] public float speed;
+    [SerializeField] private float speed;
     
     public Action<GameObject> OnTouched;
     public Action<GameObject> OnPlayerTouched;

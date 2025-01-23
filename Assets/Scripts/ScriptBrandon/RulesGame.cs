@@ -12,12 +12,6 @@ public class RulesGame : MonoBehaviour
         score += addScore;
         return score;
     }
-    public int AddScore500()
-    {
-        int addScore = 500;
-        score += addScore;
-        return score;
-    }
 
     public void GameOver()
     {
