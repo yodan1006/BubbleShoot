@@ -8,6 +8,7 @@ public class MenuPause : MonoBehaviour
 
     private void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.Escape) 
             || Input.GetKeyDown(KeyCode.P))
         {
