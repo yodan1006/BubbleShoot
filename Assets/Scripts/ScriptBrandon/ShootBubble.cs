@@ -38,9 +38,6 @@ public class ShootBubble : MonoBehaviour
         {
             Vector3 targetDir = hit.point;
             Vector3 dir = (targetDir - Canon.position).normalized;
-            
-            Debug.DrawLine(Canon.position, Canon.position+dir, Color.yellow);
-            
             Quaternion targetRotation = Quaternion.LookRotation(dir);
             Canon.rotation =
                 targetRotation; //Quaternion.Euler(targetRotation.eulerAngles.x, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
