@@ -30,7 +30,12 @@ public class Manager : MonoBehaviour
         {
             var enemyScript = enemy.GetComponent<EnemyIA>();
 
-            if (enemyScript != null) enemyScript.OnTouched += HandleEnemyCollision;
+            if (enemyScript != null)
+            {
+                enemyScript.OnTouched += HandleEnemyCollision;
+                enemyScript.OnPlayerTouched += HandlePlayerHit;
+
+            }
         }
 
         foreach (var bubble in poolMunition.GetAllBubbles())
@@ -40,6 +45,7 @@ public class Manager : MonoBehaviour
             if (bubbleScript != null) bubbleScript.OnBubbleTouched += HandleBubbleCollision;
         }
         bonusApplied = new bool[bonus.Length];
+        
     }
 
     private void Update()
@@ -60,6 +66,9 @@ public class Manager : MonoBehaviour
                 bonusApplied[i] = true;
             }
         }
+        
+        if (rulesGame.life == 0)
+            rulesGame.GameOver();
     }
 
     private void Applybonus(int bonusIndex)
@@ -87,6 +96,11 @@ public class Manager : MonoBehaviour
         {
             ia.target = targetEnemy;
         }
+    }
+
+    private void HandlePlayerHit(GameObject player)
+    {
+        rulesGame.life--;
     }
 
     private void HandleEnemyCollision(GameObject enemy)

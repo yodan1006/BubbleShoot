@@ -11,7 +11,6 @@ public class ShootBubble : MonoBehaviour
     
     public int missileCount = 1;
     [SerializeField] float spreadAngle = 30f;
-    [SerializeField] private float missileSpeed = 10f;
 
     public float clickspeed = 1f;
     private float lastClickTime;

@@ -7,6 +7,7 @@ public class EnemyIA : MonoBehaviour
     [SerializeField] private float speed;
     
     public Action<GameObject> OnTouched;
+    public Action<GameObject> OnPlayerTouched;
     
     private void Update()
     {
@@ -20,7 +21,12 @@ public class EnemyIA : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        NotyfieCollision();
+        if(other.CompareTag("munition")) NotyfieCollision();
+        else
+        {
+            OnPlayerTouched?.Invoke(other.gameObject);
+            gameObject.SetActive(false);
+        }
     }
 
     private void NotyfieCollision()
