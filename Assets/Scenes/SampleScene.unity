@@ -599,7 +599,7 @@ MonoBehaviour:
   SpawnKingSLime: {fileID: 1525478267}
   spawnInterval: 2
   scoreText: {fileID: 1278729449}
-  timeToIncreasedSpawn: 60
+  timeToIncreasedSpawn: 50
   increasedSpeedSlime: 0.5
   CountForKingSlime: 0
   bonus: 0f0000001e000000
@@ -665,10 +665,10 @@ MonoBehaviour:
   poolMunition: {fileID: 424722036}
   shootPoint: {fileID: 381496793}
   Canon: {fileID: 381496793}
-  shootForce: 15.44
+  shootForce: 5
   missileCount: 1
-  spreadAngle: 15
-  clickspeed: 0.001
+  spreadAngle: 25
+  clickspeed: 0.45
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4291488000
+  m_fontColor: {r: 0, g: 0.9150943, b: 0.7903647, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2837,10 +2837,10 @@ RectTransform:
   - {fileID: 1370110607}
   m_Father: {fileID: 1950969324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.93200004}
+  m_AnchorMin: {x: 0.74500006, y: 0.94400007}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -17.499914, y: -10}
+  m_SizeDelta: {x: 35.00017, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064376846
 MonoBehaviour:

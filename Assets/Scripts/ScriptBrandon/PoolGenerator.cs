@@ -25,14 +25,26 @@ public class PoolGenerator : MonoBehaviour
 
     public GameObject GetEnemy()
     {
+        List<GameObject> inactiveEnemies = new List<GameObject>();
+
+        // Parcours la pool pour récupérer les ennemis inactifs
         foreach (var obj in _poolEnemy)
         {
             if (!obj.activeInHierarchy)
             {
-                obj.SetActive(true);
-                return obj;
+                inactiveEnemies.Add(obj);
             }
         }
+
+        // Si des ennemis inactifs sont disponibles, en activer un au hasard
+        if (inactiveEnemies.Count > 0)
+        {
+            GameObject randomEnemy = inactiveEnemies[Random.Range(0, inactiveEnemies.Count)];
+            randomEnemy.SetActive(true);
+            return randomEnemy;
+        }
+
+        // Sinon, créer un nouvel ennemi, l'activer et l'ajouter à la pool
         GameObject NewObj = Instantiate(PrefabSlime[Random.Range(0, PrefabSlime.Count)]);
         NewObj.SetActive(true);
         _poolEnemy.Add(NewObj);
