@@ -27,20 +27,24 @@ public class ShootBubble : MonoBehaviour
         {
             Bubbleshoot();
             lastClickTime = Time.time;
-            Debug.Log("SHOOOOOOT");
         }
     }
 
     private void MoveCanon()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit,Mathf.Infinity))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
         {
-            Vector3 targetDir = hit.point;
-            Vector3 dir = (targetDir - Canon.position).normalized;
-            Quaternion targetRotation = Quaternion.LookRotation(dir);
-            Canon.rotation =
-                targetRotation; //Quaternion.Euler(targetRotation.eulerAngles.x, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
+            Vector3 targetDir = hit.point - Canon.position; // Direction entre le canon et le point touché
+            //targetDir.y = 0; // Si tu veux que le canon ne se déplace qu'horizontalement
+
+            Debug.DrawLine(Canon.position, hit.point, Color.yellow);
+
+            if (targetDir != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(targetDir);
+                Canon.rotation = targetRotation;
+            }
         }
     }
 
