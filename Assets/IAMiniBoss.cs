@@ -1,13 +1,13 @@
-using System;
+using TMPro;
 using UnityEngine;
 
-public class EnemyIA : MonoBehaviour
+public class IAMiniBoss : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] public float speed;
-    
-    public Action<GameObject> OnTouched;
-    public Action<GameObject> OnPlayerTouched;
+    public float speed = 1f;
+    public int life = 5;
+    public RulesGame rulesGame;
+    public TextMeshProUGUI scoreText;
     
     private void Update()
     {
@@ -17,20 +17,18 @@ public class EnemyIA : MonoBehaviour
             Vector3 dir = (target.position - transform.position).normalized;
             if(dir != Vector3.zero) transform.forward = dir;
         }
+        
+        if (transform.position == target.position) rulesGame.GameOver();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("munition")) NotyfieCollision();
-        else
+        life--;
+        if (life <= 0)
         {
-            OnPlayerTouched?.Invoke(other.gameObject);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            int scoreAdd = rulesGame.AddScore500();
+            scoreText.text = scoreAdd.ToString();
         }
-    }
-
-    private void NotyfieCollision()
-    {
-        OnTouched?.Invoke(gameObject);
     }
 }

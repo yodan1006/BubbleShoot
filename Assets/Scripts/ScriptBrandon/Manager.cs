@@ -1,21 +1,34 @@
+using System;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class Manager : MonoBehaviour
 {
     public PoolGenerator poolEnemy;
     public PoolMunition poolMunition;
     public ShootBubble shootBubble;
     public RulesGame rulesGame;
+    public GameObject KingSlime;
+    public IAMiniBoss miniBoss;
 
     public Transform targetEnemy;
     
     [Header("ref limite of spawn")]
     public Transform spawnPoint1;
     public Transform spawnPoint2;
+    public Transform SpawnKingSLime;
     
     public float spawnInterval = 2f;
     private float _spawnTimer;
     public TextMeshProUGUI scoreText;
+
+    [Header("rules of Spawn slime")] 
+    public float timeToIncreasedSpawn = 60f;
+    public float increasedSpeedSlime = 0.5f;
+    public int CountForKingSlime;
+    private float _timeElapsed;
+    private int spawnCounter = 1;
     
     [Header("bonus")]
     public int[] bonus;
@@ -25,6 +38,9 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         _spawnTimer = spawnInterval;
+        miniBoss.target = targetEnemy;
+        miniBoss.scoreText = scoreText;
+        miniBoss.rulesGame = rulesGame;
 
         foreach (var enemy in poolEnemy.GetAllEnemies())
         {
@@ -51,6 +67,14 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         _spawnTimer -= Time.deltaTime;
+        _timeElapsed += Time.deltaTime;
+
+        if (_timeElapsed >= timeToIncreasedSpawn)
+        {
+            spawnCounter++;
+            _timeElapsed = 0;
+            UpdateSpeedSlime();
+        }
 
         if (_spawnTimer <= 0)
         {
@@ -69,6 +93,27 @@ public class Manager : MonoBehaviour
         
         if (rulesGame.life == 0)
             rulesGame.GameOver();
+
+        if (CountForKingSlime == 15)
+        {
+            SpawnKingSlime();
+            CountForKingSlime = 0;
+        }
+    }
+    
+    private void SpawnKingSlime()
+    {
+        Instantiate(KingSlime, SpawnKingSLime.position, SpawnKingSLime.rotation);
+    }
+
+    private void UpdateSpeedSlime()
+    {
+        foreach (var slime in poolEnemy.GetAllEnemies())
+        {
+            var enemy = slime.GetComponent<EnemyIA>();
+
+            enemy.speed += increasedSpeedSlime;
+        }
     }
 
     private void Applybonus(int bonusIndex)
@@ -78,13 +123,17 @@ public class Manager : MonoBehaviour
 
     private void SpawnSlime()
     {
-        GameObject slime = poolEnemy.GetEnemy();
-
-        if (slime != null)
+        for (int i = 0; i < spawnCounter; i++)
         {
-            Vector3 pos = GetRandomPos();
-            slime.transform.position = pos;
-            ConfigureEnemy(slime);
+                
+            GameObject slime = poolEnemy.GetEnemy();
+    
+            if (slime != null)
+            {
+                Vector3 pos = GetRandomPos();
+                slime.transform.position = pos;
+                ConfigureEnemy(slime);
+            }
         }
     }
 
@@ -110,6 +159,7 @@ public class Manager : MonoBehaviour
         int scoreAdd = rulesGame.AddScore100();
         scoreText.text = scoreAdd.ToString();
         CountBonus++;
+        CountForKingSlime++;
     }
     
     private void HandleBubbleCollision(GameObject bubble)
