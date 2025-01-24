@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7241126521189021921, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
+      propertyPath: m_Height
+      value: 1.4770515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241126521189021921, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6495615
+      objectReference: {fileID: 0}
     - target: {fileID: 8571684828533453812, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
       propertyPath: m_Name
       value: Gslime Variant
@@ -109,9 +117,6 @@ PrefabInstance:
       addedObject: {fileID: 7872473222969324695}
     - targetCorrespondingSourceObject: {fileID: 8571684828533453812, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7055581453732442760}
-    - targetCorrespondingSourceObject: {fileID: 8571684828533453812, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8502823022382971788}
     - targetCorrespondingSourceObject: {fileID: 4651131139134488603, guid: 6a04b0655d088a544b8edb70cea86ceb, type: 3}
       insertIndex: -1
@@ -163,29 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 1.75
---- !u!136 &7055581453732442760
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3147027134031431362}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.2157465
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5005906, z: 0}
 --- !u!54 &8502823022382971788
 Rigidbody:
   m_ObjectHideFlags: 0
