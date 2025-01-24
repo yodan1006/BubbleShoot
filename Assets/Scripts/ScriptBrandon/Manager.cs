@@ -97,7 +97,7 @@ public class Manager : MonoBehaviour
         if (rulesGame.life == 0)
             rulesGame.GameOver();
 
-        if (CountForKingSlime == 15)
+        if (CountForKingSlime >= 15)
         {
             SpawnKingSlime();
             CountForKingSlime = 0;
