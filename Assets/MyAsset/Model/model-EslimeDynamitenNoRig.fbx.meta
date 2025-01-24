@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ead4e4a4b91cf1d49af20a2cca067946
+guid: 25a24bd2235352e4e9d216a1cf93b9c2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,9 +31,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Anim-Slime
-      takeName: Anim-Slime
-      internalID: 7154759325649341013
+      name: Anim-Cslime
+      takeName: Anim-Cslime
+      internalID: -8380884728899919971
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -60,9 +60,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature-Slime.001|ArmatureAction
-      takeName: armature-Slime.001|ArmatureAction
-      internalID: -3511980908560265769
+      name: Armature-Eslime|ArmatureAction
+      takeName: Armature-Eslime|ArmatureAction
+      internalID: -8711430296113000011
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -89,9 +89,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature-Slime.001|ArmatureAction.001
-      takeName: armature-Slime.001|ArmatureAction.001
-      internalID: 6770642175458147831
+      name: Armature-Eslime|ArmatureAction.001
+      takeName: Armature-Eslime|ArmatureAction.001
+      internalID: -658319353434876433
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -118,9 +118,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature-Slime.001|ArmatureAction.002
-      takeName: armature-Slime.001|ArmatureAction.002
-      internalID: 5863329256842198588
+      name: Armature-Eslime|ArmatureAction.002
+      takeName: Armature-Eslime|ArmatureAction.002
+      internalID: -4019511708724304274
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -147,9 +147,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature-Slime.001|ArmatureAction.003
-      takeName: armature-Slime.001|ArmatureAction.003
-      internalID: -2331976425123357861
+      name: Armature-Eslime|ArmatureAction.003
+      takeName: Armature-Eslime|ArmatureAction.003
+      internalID: -4978132031939991075
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -176,9 +176,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature-Slime.001|ArmatureAction.004
-      takeName: armature-Slime.001|ArmatureAction.004
-      internalID: -8798421458736095838
+      name: Armature-Eslime|ArmatureAction.004
+      takeName: Armature-Eslime|ArmatureAction.004
+      internalID: -3931177738742579927
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
