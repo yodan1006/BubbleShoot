@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.4, y: 0.5, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 868991709696525799}
@@ -86,10 +86,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.21464363
-  m_Height: 0.44891453
+  m_Radius: 0.40545386
+  m_Height: 1.263433
   m_Direction: 1
-  m_Center: {x: 0.0032851696, y: 0.1717923, z: -0.009599745}
+  m_Center: {x: 0.0064275265, y: 0.5166451, z: -0.009599745}
 --- !u!114 &1337639177805611242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2518564882334684032, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2518564882334684032, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 067cf132b8fe79d4da27203abd94d31d, type: 2}
     - target: {fileID: -756084476780977587, guid: 92c3a4dc8d319d24e8da2a612fa89cc7, type: 3}
       propertyPath: m_Layer
       value: 8
