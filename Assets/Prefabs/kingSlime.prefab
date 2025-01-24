@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 1.5
-  life: 45
+  life: 25
   rulesGame: {fileID: 0}
   scoreText: {fileID: 0}
 --- !u!1 &2349004987586470223
