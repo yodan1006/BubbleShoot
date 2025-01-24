@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +12,8 @@ public class Manager : MonoBehaviour
     public RulesGame rulesGame;
     public GameObject KingSlime;
     public IAMiniBoss miniBoss;
-
+    public ManageSound manageSound;
+    
     public Transform targetEnemy;
     
     [Header("ref limite of spawn")]
@@ -37,6 +39,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+        miniBoss.manageSound = manageSound;
         _spawnTimer = spawnInterval;
         miniBoss.target = targetEnemy;
         miniBoss.scoreText = scoreText;
@@ -104,6 +107,7 @@ public class Manager : MonoBehaviour
     private void SpawnKingSlime()
     {
         Instantiate(KingSlime, SpawnKingSLime.position, SpawnKingSLime.rotation);
+        manageSound.audio.Stop();
     }
 
     private void UpdateSpeedSlime()

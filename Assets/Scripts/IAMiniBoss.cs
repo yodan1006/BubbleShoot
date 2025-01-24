@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,14 @@ public class IAMiniBoss : MonoBehaviour
     public int life = 5;
     public RulesGame rulesGame;
     public TextMeshProUGUI scoreText;
-    
+    public ManageSound manageSound;
+
+
+    private void Start()
+    {
+        manageSound.bossAudio.Play();
+    }
+
     private void Update()
     {
         if (target != null)
@@ -29,6 +37,8 @@ public class IAMiniBoss : MonoBehaviour
             Destroy(gameObject);
             int scoreAdd = rulesGame.AddScore500();
             scoreText.text = scoreAdd.ToString();
+            manageSound.bossAudio.Stop();
+            manageSound.audio.Play();
         }
     }
 }
