@@ -1,6 +1,4 @@
-using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -122,7 +120,7 @@ public class Manager : MonoBehaviour
 
     private void Applybonus(int bonusIndex)
     {
-        shootBubble.missileCount += 2;
+        shootBubble.shootForce += 5;
     }
 
     private void SpawnSlime()

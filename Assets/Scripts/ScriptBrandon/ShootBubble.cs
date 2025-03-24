@@ -32,18 +32,22 @@ public class ShootBubble : MonoBehaviour
 
     private void MoveCanon()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePos.x >= 0 && mousePos.x <= Screen.width && mousePos.y >= 0 && mousePos.y <= Screen.height)
         {
-            Vector3 targetDir = hit.point - Canon.position; // Direction entre le canon et le point touché
-            //targetDir.y = 0; // Si tu veux que le canon ne se déplace qu'horizontalement
-
-            Debug.DrawLine(Canon.position, hit.point, Color.yellow);
-
-            if (targetDir != Vector3.zero)
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
-                Quaternion targetRotation = Quaternion.LookRotation(targetDir);
-                Canon.rotation = targetRotation;
+                Vector3 targetDir = hit.point - Canon.position;
+
+
+                Debug.DrawLine(Canon.position, hit.point, Color.yellow);
+
+                if (targetDir != Vector3.zero)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(targetDir);
+                    Canon.rotation = targetRotation;
+                }
             }
         }
     }
@@ -53,35 +57,35 @@ public class ShootBubble : MonoBehaviour
         float angleStep = spreadAngle / (missileCount - 1); 
         float startAngle = -spreadAngle / 2;
 
-        if (missileCount > 1)
-        {
-            for (int i = 0; i < missileCount; i++)
-            {
-                GameObject bubble = poolMunition.GetBubble(); // Récupère une nouvelle bulle pour chaque tir
-                Rigidbody rb = bubble.GetComponent<Rigidbody>();
-                if (bubble != null)
-                {
-                    bubble.transform.position = shootPoint.position;
-
-                    if (rb != null)
-                    {
-                        rb.linearVelocity = Vector3.zero; // Réinitialise la vitesse
-                        float angle = startAngle + angleStep * i;
-                        Vector3 dir = Quaternion.Euler(0, angle, 0) * shootPoint.forward;
-                        rb.AddForce(dir * shootForce, ForceMode.Impulse);
-                    }
-                }
-            }
-        }
-        else
-        {
+        // if (missileCount > 1)
+        // {
+        //     for (int i = 0; i < missileCount; i++)
+        //     {
+        //         GameObject bubble = poolMunition.GetBubble(); // Récupère une nouvelle bulle pour chaque tir
+        //         Rigidbody rb = bubble.GetComponent<Rigidbody>();
+        //         if (bubble != null)
+        //         {
+        //             bubble.transform.position = shootPoint.position;
+        //
+        //             if (rb != null)
+        //             {
+        //                 rb.linearVelocity = Vector3.zero; // Réinitialise la vitesse
+        //                 float angle = startAngle + angleStep * i;
+        //                 Vector3 dir = Quaternion.Euler(0, angle, 0) * shootPoint.forward;
+        //                 rb.AddForce(dir * shootForce, ForceMode.Impulse);
+        //             }
+        //         }
+        //     }
+        //}
+        //else
+        //{
             GameObject bubble = poolMunition.GetBubble();
             Rigidbody rb = bubble.GetComponent<Rigidbody>();
             bubble.transform.position = shootPoint.position;
             rb.linearVelocity = Vector3.zero;
             Vector3 dir = Quaternion.Euler(0, 1, 0) * shootPoint.forward;
             rb.AddForce(dir * shootForce, ForceMode.Impulse);
-        }
+        //}
     }
 }
 

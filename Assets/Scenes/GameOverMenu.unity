@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &348953867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348953869}
+  - component: {fileID: 348953868}
+  m_Layer: 0
+  m_Name: LandScape
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &348953868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348953867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb9fe71fab3ea44a8b38aeb1d8310d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &348953869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348953867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.177808, y: -81.555466, z: 165.36581}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397870437
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +365,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 562378235289527706, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5179
+      objectReference: {fileID: 0}
+    - target: {fileID: 562378235289527706, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -67
+      objectReference: {fileID: 0}
     - target: {fileID: 3754258400308233397, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -332,6 +384,22 @@ PrefabInstance:
     - target: {fileID: 3754258400308233397, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099359184776415986, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099359184776415986, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -143
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847586384941947251, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -599
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847586384941947251, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 6949853895261990184, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
       propertyPath: m_Pivot.x
@@ -420,6 +488,18 @@ PrefabInstance:
     - target: {fileID: 8312106175749428943, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489444948672030496, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 617
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489444948672030496, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 239
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889291487123464708, guid: a908f252dd9b0674d834d8c8a5e18ed8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -630
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -794,3 +874,4 @@ SceneRoots:
   - {fileID: 974694053}
   - {fileID: 718858036}
   - {fileID: 2117418977}
+  - {fileID: 348953869}
