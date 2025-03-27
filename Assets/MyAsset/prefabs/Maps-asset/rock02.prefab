@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4591089647383284086}
+  - component: {fileID: 4558705473648432106}
   m_Layer: 0
   m_Name: rock02
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 7415101821514818224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4558705473648432106
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985318653166866783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.2167399
+  m_Center: {x: 0.39, y: 0.7167399, z: 0}
 --- !u!1001 &7020270334616225115
 PrefabInstance:
   m_ObjectHideFlags: 0

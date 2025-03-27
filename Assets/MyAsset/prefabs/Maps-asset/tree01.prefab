@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246088699093714351}
+  - component: {fileID: 7774636729028785247}
   m_Layer: 0
   m_Name: tree01
   m_TagString: Untagged
@@ -32,6 +33,29 @@ Transform:
   - {fileID: 6093247012232925741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7774636729028785247
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902985599808157804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 11.294797
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.1473985, z: 0}
 --- !u!1001 &5982247752437331398
 PrefabInstance:
   m_ObjectHideFlags: 0

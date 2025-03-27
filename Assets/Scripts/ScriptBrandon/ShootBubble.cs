@@ -54,8 +54,8 @@ public class ShootBubble : MonoBehaviour
 
     private void Bubbleshoot()
     {
-        float angleStep = spreadAngle / (missileCount - 1); 
-        float startAngle = -spreadAngle / 2;
+        // float angleStep = spreadAngle / (missileCount - 1); 
+        // float startAngle = -spreadAngle / 2;
 
         // if (missileCount > 1)
         // {
@@ -83,7 +83,7 @@ public class ShootBubble : MonoBehaviour
             Rigidbody rb = bubble.GetComponent<Rigidbody>();
             bubble.transform.position = shootPoint.position;
             rb.linearVelocity = Vector3.zero;
-            Vector3 dir = Quaternion.Euler(0, 1, 0) * shootPoint.forward;
+            Vector3 dir = shootPoint.forward;
             rb.AddForce(dir * shootForce, ForceMode.Impulse);
         //}
     }
